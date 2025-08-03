@@ -1,0 +1,121 @@
+% \documentclass[lang=cn,newtx,10pt,scheme=chinese]{elegantbook}
+\documentclass[theorem=false,mathfont=none,openany,sub3section]{easybook}
+
+\usepackage[lang=cn]{eb-elegantbook}
+\usepackage{lmodern}
+\usepackage{codehigh}
+\lstset{moreemph={nofont,thmenv}}
+
+\renewcommand{\rmdefault}{lmr}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+
+\title{Complex Analysis}
+\subtitle{Lecture Notes}
+\author{Stone Sun}
+%\institute{Ocean University of China}
+\date{\today}
+%\version{}
+\bioinfo{联系方式}{hefengzhishui@outlook.com}
+
+%\extrainfo{注意：Elegant系列模板自 2023 年 1 月 1 日开始，不再更新和维护！}
+
+\setcounter{tocdepth}{3}
+
+\logo{logo.jpg}
+\cover{cover.png}
+
+% 本文档命令
+% \usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+% 修改标题页的橙色带
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+% \usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % 参考文献，不要删除
+
+% 定义\btocgroup和\etocgroup命令把目录风格限制在组内，使其局部生效
+\newcommand{\btocgroup}[1][toc]{\addtocontents{#1}{\string\begingroup}}
+\newcommand{\etocgroup}[1][toc]{\addtocontents{#1}{\string\endgroup}}
+%\SetTocStyle{chapter}{emph}{tocformat+ = \color{black}}
+\let\ls\lstinline
+\ebhdrset{footnotetype=flush}
+\ctexset{
+  paragraph/numbering=false,
+  paragraph/beforeskip=1explus.2ex
+  }
+\SetTocStyle{subsubsection}{sub2}{
+  tocindent=3.8em,
+  tocformat+=\color{blue}
+  }
+\UseTocStyle{subsubsection}{sub2}{toc}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+谨以此篇, 献给热爱分析的你.\par
+\end{center}
+\frontmatter
+
+\begingroup
+\renewcommand{\familydefault}{\rmdefault}
+\tableofcontents
+\endgroup
+
+\newpage
+\begin{center}
+\Large
+\textbf{前言}\par
+\end{center}
+
+\hspace{2em}
+
+这是一份关于复分析的讲义, 但其主要观点是围绕函数论的思想展开的, 几何的观点在这其中很少体现, 仅在第一章和第七章中简要介绍, 这份讲义是基于中国海洋大学的复变函数课程的讲义和笔记而写成的, 主要参考了龚昇的《简明复分析》和钟玉泉的《复变函数论》, 其中许多例子和习题均来自于这两本书.\par
+相较于其他分析课程, 复变函数似乎是最能体现应用的一门课程, 甚至于许多工科专业也需要学习相关的知识. 但这篇讲义是从数学专业的角度展开阐述的, 也正因此, 我在整理这份讲义的时候更倾向于用抽象的方式引入, 采用分析的语言来表述. 因此这对于想要直接应用的学生并不友好.\par
+这份讲义是笔者在2025年春季学期和暑期复习这门课程时完成的, 主要目的是为了更进一步了解现代分析和函数论的观点. 同时我也非常感谢姚增善老师对这门课程的讲授, 我整理的内容大纲就是大致按照姚老师的课程结构安排的.\par
+出于对个人水平的了解, 我不敢保证这份讲义不存在任何问题, 因此在正式撰写完成这份讲义后, 我很期待能够得到更多的反馈和建议, 以便于我在今后的学习和研究中更好地完善这份讲义. 如果你有任何意见或建议, 欢迎随时与我联系.\par
+
+\begin{flushright}
+\text{Stone Sun}\\
+\text{\today}
+\end{flushright}
+
+\mainmatter
+
+\btocgroup
+\UseTocStyle{chapter}{emph}{toc}
+\chapter{度量空间}
+\etocgroup
+
+\section{度量空间}
+
+作为现代数学研究的重要概念之一, 通过度量构造的空间为后面许多空间的形成提供了重要基础. 这里我们首先讨论度量空间的定义和一些例子.\par
+
+\begin{definition}
+  设$X$是一个非空集合, 如果存在一个函数$d: X \times X \to \mathbb{R}$满足以下性质:\par
+  \begin{enumerate}
+    \item $d(x, y) \geq 0$, $d(x, y) = 0$ 当且仅当 $x = y$;
+    \item $d(x, y) = d(y, x)$, $\forall x, y \in X$;
+    \item $d(x, z) \leq d(x, y) + d(y, z)$, $\forall x, y, z \in X$.
+  \end{enumerate}
+  则称$d$为$X$上的度量, 并称$(X, d)$为度量空间.\par
+\end{definition}
+
+考虑下面的例子是一个度量空间:\par
+
+\begin{example}
+  设$p\geqslant 1$, 定义$d_p(x,y) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}}$, 其中$x = (x_1, x_2, \ldots, x_n)$, $y = (y_1, y_2, \ldots, y_n) \in \mathbb{R}^n$. 则$(\mathbb{R}^n, d_p)$是一个度量空间.\par
+\end{example}
+
+
+
+
+
+
+\backmatter
+
+
+\end{document}
