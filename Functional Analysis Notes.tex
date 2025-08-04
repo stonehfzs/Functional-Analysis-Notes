@@ -110,6 +110,42 @@
   设$p\geqslant 1$, 定义$d_p(x,y) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}}$, 其中$x = (x_1, x_2, \ldots, x_n)$, $y = (y_1, y_2, \ldots, y_n) \in \mathbb{R}^n$. 则$(\mathbb{R}^n, d_p)$是一个度量空间.\par
 \end{example}
 
+\begin{definition}
+  设$(X,d)$是度量空间, $\{x_n\}$是$X$中一个可列的点列, $x_0 \in X$, 若$\lim_{n \to \infty} d(x_n, x_0) = 0$, 则称$x_n$收敛于$x_0$, 记作$\lim_{n \to \infty}x_n = x_0$.\par
+\end{definition}
+
+\begin{remark}
+  我们注意到这样一个事实, 如果$\forall \varepsilon >0, \exists N \in \mathbb{N}$, 使得当$n,m  > N$时, $d(x_n, x_m) < \varepsilon$, 则称$x_n$为Cauchy列, 这说明完备的度量空间可以直观解释为满足Cauchy收敛性的点列.\par
+  但同时我们也应注意到, 这一事实并不对任何拓扑空间都成立. 在一般拓扑学中, 我们知道并不永远满足点列的极限存在性的唯一性, 这说明只有给定了度量的空间, 才能保证点列的收敛性和Cauchy列的等价性.\par
+\end{remark}
+
+下面我们考虑一些在传统实分析中经常用到的度量空间:\par
+
+\begin{example}
+  定义在区间$[a,b]$上的连续函数空间$C[a,b]$是完备的.\par
+\end{example}
+
+\begin{remark}
+  上面这个例子说明在$[a,b]$上定义的连续函数空间是完备的, 这说明在$[a,b]$上定义的连续函数列一致收敛 (根据Weierstrass一致收敛定理), 但我们应当注意到, 在$[a,b]$上定义的函数列的点态收敛是不能通过度量描述的, 这是由于点态收敛的定义是基于函数值的收敛, 而不是基于函数的距离.\par
+\end{remark}
+
+\begin{example}
+  考虑度量空间$(X,d)$, 一种关于$X$的新的度量方式是$d^{\prime}(x,y)=\frac{d(x,y)}{1+d(x,y)}$.\par
+\end{example}
+
+\begin{remark}
+  上面的例子说明了度量空间的度量可以通过一些变换来得到新的度量, 这说明度量空间的结构是相对灵活的. 并且我们容易验证, 上面$d^{\prime}$在被看作度量时收敛性和$d$是一致的.\par
+\end{remark}
+
+事实上, 对于Lebesgue可测函数, 我们也可以定义一种度量.\par
+
+\begin{example}
+  设$f,g$是Lebesgue可测函数, 定义$d(f,g) = \int_{[a,b]}^{} \frac{|f(x) - g(x)|}{1+|f(x) - g(x)|} \mathrm{d}m(x)$. 则$(L^1, d)$是一个度量空间, 其中$m$表示测度.\par
+\end{example}
+
+\begin{remark}
+  要说明上面这个例子, 我们考虑Lebesgue控制收敛定理, 这说明Lebesgue可测函数的点态收敛和Lebesgue积分的收敛是等价的. 因此我们可以通过Lebesgue积分来定义Lebesgue可测函数的度量.\par
+\end{remark}
 
 
 
