@@ -147,6 +147,77 @@
   要说明上面这个例子, 我们考虑Lebesgue控制收敛定理, 这说明Lebesgue可测函数的点态收敛和Lebesgue积分的收敛是等价的. 因此我们可以通过Lebesgue积分来定义Lebesgue可测函数的度量.\par
 \end{remark}
 
+不同于一般拓扑的情形, 在度量空间中收敛点列的极限是唯一的, 因此我们用下面的定理概括这一事实:\par
+
+\begin{theorem}
+  设$(X,d)$是度量空间, $\{x_n\}$是$X$中的点列, 如果$\lim_{n \to \infty} x_n = x_0$, 则$x_0$是唯一的.\par
+\end{theorem}
+
+\begin{proof}
+  设$x_0$和$x_1$都是$\{x_n\}$的极限, 则根据度量的定义, 有$0\leqslant d(x_0,x_1)\leqslant d(x_0,x_n) + d(x_n,x_1)$, 对任意的$n$, 当$n$足够大时, $d(x_0,x_n)$和$d(x_n,x_1)$都趋近于0, 因此$d(x_0,x_1) = 0$, 这说明$x_0 = x_1$.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果事实上给出了可测函数列依测度收敛的唯一性.\par
+\end{remark}
+
+\newpage
+
+\section{赋范线性空间及内积空间}
+
+泛函分析研究的一个重要方面是空间的结构和性质,因此下面我们首先回顾线性空间.\par
+
+\begin{definition}
+  设$X$是一个非空集合, 如果存在两个运算$+$和$\cdot$使得以下性质成立:\par
+  \begin{enumerate}
+    \item $(X,+)$是一个阿贝尔群;
+    \item $\forall \alpha \in \mathbb{R}, x,y \in X$, $\alpha x + y \in X$;
+    \item $\forall x,y,z \in X$, $(x+y)+z = x+(y+z)$;
+    \item $\forall x,y \in X$, $x+y = y+x$;
+    \item $\exists 0 \in X$, 使得$\forall x \in X$, $x+0 = x$;
+    \item $\forall x \in X$, $\exists -x \in X$, 使得$x + (-x) = 0$.
+  \end{enumerate}
+  则称$(X,+,\cdot)$为线性空间.\par
+\end{definition}
+
+\begin{remark}
+  更进一步地, 线性空间可以等价定义为在$X$上有一个满足交换律的加法运算符和一个数乘运算符.\par
+\end{remark}
+
+下面我们考虑一种较为特殊的线性空间, 事实上我们在高等代数中已经了解过这种空间的特点.\par
+
+\begin{definition}
+  设$S$是集合, $\mathcal{F}$是$S$上某些函数构成的函数族, 若定义加法和数乘运算如下:\par
+  \begin{enumerate}
+    \item $(f+g)(x) = f(x) + g(x), \forall f,g \in \mathcal{F}, x \in S$,
+    \item $(\alpha f)(x) = \alpha f(x), \forall f \in \mathcal{F}, x \in S$.
+  \end{enumerate}
+  则称$\mathcal{F}$为$S$上的函数空间, 并称$(\mathcal{F}, +, \cdot)$为线性空间.\par
+\end{definition}
+
+\begin{remark}
+  这里我们没有明确$\alpha$的取值范围, 这是因为我们可以将$\alpha$看作是任意实数或复数, 这取决于我们所研究的函数空间的性质. 例如, 如果$\mathcal{F}$是实值函数空间, 则$\alpha$为实数; 如果$\mathcal{F}$是复值函数空间, 则$\alpha$为复数.\par
+  对应地, 我们称$\mathcal{F}$为实值函数空间或复值函数空间, 也简称为实空间或复空间.\par
+\end{remark}
+
+下面讨论一些具体的函数空间的例子.\par
+
+\begin{example}
+  以下这些例子都是函数空间:\par
+  \begin{enumerate}
+    \item $C(E)$表示在集合$E$上定义的所有连续函数的集合, 其中$E$是$\mathbb{R}$的一个子集.\par
+    \item $B(E)$表示在集合$E$上定义的所有有界函数的集合, 其中$E$是$\mathbb{R}$的一个子集.\par
+    \item $P[x]$表示全体多项式函数$p(x)$的集合.\par
+  \end{enumerate}
+\end{example}
+
+类似于高等代数中对空间的讨论, 线性空间总是存在着一个基, 这使得我们可以将线性空间中的任意元素表示为基向量的线性组合.\par
+
+\begin{definition}
+  若$X$上存在一组线性无关的向量$\{e_i\}_{i \in I}$, 使得$X$中的任意向量都可以表示为这组向量的线性组合, 则称$\{e_i\}_{i \in I}$为$X$的Hamel基.\par
+  若$X$的Hamel基是有限的, 则称$X$为有限维线性空间, 否则称$X$为无限维线性空间.\par
+\end{definition}
+
 
 
 
