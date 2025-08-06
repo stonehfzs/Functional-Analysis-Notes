@@ -218,9 +218,28 @@
   若$X$的Hamel基是有限的, 则称$X$为有限维线性空间, 否则称$X$为无限维线性空间.\par
 \end{definition}
 
+对于线性空间, 前面的讨论没有给出这种空间的度量, 因此我们引入赋范线性空间的概念.\par
 
+\begin{definition}
+  设$X$是一个定义在数域$K$上的线性空间, 若存在一个函数$\|\cdot\|: X \to \mathbb{R}$, 满足以下性质:\par
+  \begin{enumerate}
+    \item $\|x\| \geqslant 0, \forall x \in X$;
+    \item $\|\alpha x\| = |\alpha| \|x\|, \forall \alpha \in K, x \in X$;
+    \item $\|x+y\| \leqslant \|x\| + \|y\|, \forall x,y \in X$.
+  \end{enumerate}
+  则称$\|\cdot \|$为$X$上的半范数.\par
+  若还满足$\|x\| = 0 \Leftrightarrow x = 0, \forall x \in X$, 则称$\|\cdot \|$为$X$上的范数, 此时也称$(X,\|\cdot \|)$为赋范线性空间.\par
+\end{definition}
 
+\begin{remark}
+  容易发现, 我们可以利用这个定义来诱导在$X$上的度量$d(x,y)$, 其中$d(x,y) = \|x-y\|$. 此外, 这个度量在线性空间上是连续的, 因此赋范线性空间也是度量空间.\par
+\end{remark}
 
+我们下面考虑这样的例子:\par
+
+\begin{example}
+  设$E$是$\mathbb{R}^k$上的Lebesgue可测集. 对$1\leqslant p <\infty$, 定义$\mathcal{L}^p(E)=\{f: f\in L(E), \|f\|_p=\left(\int_{E}|f|^p \mathrm{d}m\right)^{\frac{1}{p}} < \infty\}$. 则$\|\cdot\|_p$是一个半范数, 这是因为$\|f\|_p=0$不能得到$f=0$.\par
+\end{example}
 
 \backmatter
 
