@@ -119,6 +119,10 @@
   但同时我们也应注意到, 这一事实并不对任何拓扑空间都成立. 在一般拓扑学中, 我们知道并不永远满足点列的极限存在性的唯一性, 这说明只有给定了度量的空间, 才能保证点列的收敛性和Cauchy列的等价性.\par
 \end{remark}
 
+\begin{definition}
+  设$(X,d)$是度量空间, 如果$X$中任意Cauchy列都收敛于$X$中的某个点, 则称$(X,d)$为完备的.\par
+\end{definition}
+
 下面我们考虑一些在传统实分析中经常用到的度量空间:\par
 
 \begin{example}
@@ -239,7 +243,20 @@
 
 \begin{example}
   设$E$是$\mathbb{R}^k$上的Lebesgue可测集. 对$1\leqslant p <\infty$, 定义$\mathcal{L}^p(E)=\{f: f\in L(E), \|f\|_p=\left(\int_{E}|f|^p \mathrm{d}m\right)^{\frac{1}{p}} < \infty\}$. 则$\|\cdot\|_p$是一个半范数, 这是因为$\|f\|_p=0$不能得到$f=0$.\par
+  若我们规定$f\sim g$当且仅当$f=g$几乎处处成立, 则$\mathcal{L}^p(E)/\sim$是一个赋范线性空间, 记作$L^p(E)$.\par
 \end{example}
+
+下面考虑有界变差函数, 我们发现全体有界变差函数构成的空间也是一个赋范线性空间.\par
+
+\begin{example}
+  设$[a,b]$是$\mathbb{R}$上的一个闭区间, 定义$BV[a,b]=\{f: f \text{在}[a,b] \text{上有界变差}\}$. 则$BV[a,b]$是一个赋范线性空间, 其中范数定义为$\|f\|_{BV} = |f(a)| + V_a^b(f)$.\par
+\end{example}
+
+对于一般的赋范线性空间, 我们并不一定能够保证其完备性, 因此我们引入Banach空间, 简而言之, Banach空间表示的是具有范数的完备赋范线性空间.\par
+
+\begin{definition}
+  设$(X,\|\cdot\|)$是赋范线性空间, 如果其诱导的距离$d(x,y) = \|x-y\|$是完备的, 则称$(X,\|\cdot\|)$为Banach空间.\par
+\end{definition}
 
 \backmatter
 
